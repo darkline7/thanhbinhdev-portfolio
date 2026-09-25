@@ -3,246 +3,561 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThanhBinhDev — Creative Developer</title>
-    <meta name="description" content="ThanhBinhDev - Full-Stack Developer & Creative Technologist. Specializing in interactive web applications, 3D visuals, and motion design.">
+    <title>ThanhBinhDev // 清平 — Anime Creative Technologist</title>
+    <meta name="description" content="ThanhBinhDev // 清平 - Creative Developer & Full-Stack Architect. Specializing in high-voltage 3D WebGL, anime motion design, and scalable infrastructure.">
     <meta name="author" content="ThanhBinhDev">
-    <meta property="og:title" content="ThanhBinhDev — Creative Developer">
-    <meta property="og:description" content="Full-Stack Developer & Creative Technologist">
+    <meta property="og:title" content="ThanhBinhDev // 清平 — Anime Creative Technologist">
+    <meta property="og:description" content="Full-Stack Developer & Creative Technologist // Cyberpunk & Anime Aesthetics">
     <meta property="og:type" content="website">
-    <meta name="theme-color" content="#6c63ff">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236c63ff'/%3E%3Ctext x='50' y='65' font-family='monospace' font-size='48' font-weight='bold' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#ff2a85">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='10,10 90,20 80,90 20,80' fill='%23ff2a85'/%3E%3Ctext x='50' y='65' font-family='monospace' font-size='44' font-weight='bold' fill='white' text-anchor='middle'%3E清平%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div id="preloader"><div class="preloader-inner">
-    <div class="preloader-text"><span class="preloader-letter">T</span><span class="preloader-letter">H</span><span class="preloader-letter">A</span><span class="preloader-letter">N</span><span class="preloader-letter">H</span><span class="preloader-letter">B</span><span class="preloader-letter">I</span><span class="preloader-letter">N</span><span class="preloader-letter">H</span></div>
-    <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
-    <div class="preloader-counter">0%</div>
-</div></div>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-follower" id="cursor-follower"></div>
-<canvas id="three-canvas"></canvas>
-<nav id="nav">
-    <div class="nav-logo"><a href="#hero" class="logo-link"><span class="logo-bracket">&lt;</span><span class="logo-text">TB</span><span class="logo-bracket">/&gt;</span></a></div>
-    <div class="nav-links">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
-    </div>
-    <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
-</nav>
-<div class="mobile-menu" id="mobile-menu"><div class="mobile-menu-links">
-    <a href="#about" class="mobile-link">About</a>
-    <a href="#skills" class="mobile-link">Skills</a>
-    <a href="#projects" class="mobile-link">Projects</a>
-    <a href="#contact" class="mobile-link">Contact</a>
-</div></div>
-<main>
-<section id="hero" class="section hero-section">
-    <div class="hero-content">
-        <div class="hero-tag"><span class="hero-tag-dot"></span><span class="hero-tag-text">Available for freelance work</span></div>
-        <h1 class="hero-title">
-            <div class="hero-line"><span class="hero-word">Creative</span></div>
-            <div class="hero-line"><span class="hero-word">Developer</span><span class="hero-word hero-accent">&amp;</span></div>
-            <div class="hero-line"><span class="hero-word">Designer</span></div>
-        </h1>
-        <p class="hero-description">I craft digital experiences that merge aesthetics with functionality. Specializing in interactive web applications, 3D visuals, and motion design.</p>
-        <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary magnetic-btn"><span class="btn-text">View Projects</span><span class="btn-icon">&rarr;</span></a>
-            <a href="#contact" class="btn btn-outline magnetic-btn"><span class="btn-text">Get In Touch</span></a>
+<body class="anime-body">
+
+<div id="crt-overlay" class="crt-overlay"></div>
+
+<div id="preloader" class="anime-preloader">
+    <div class="preloader-hud">
+        <div class="hud-line-top"><span>[ SYSTEM BOOT // 起動シーケンス ]</span><span>EVA-NEURAL-LINK v4.0</span></div>
+        <div class="preloader-kanji">清平</div>
+        <div class="preloader-title">THANHBINH<span class="pulse-text">.DEV</span></div>
+        <div class="preloader-subtitle">// SPECIAL-GRADE CREATIVE TECHNOLOGIST //</div>
+        <div class="preloader-gauge">
+            <div class="gauge-bar"><div class="gauge-fill" id="preloader-fill"></div></div>
+            <div class="gauge-telemetry">
+                <span id="preloader-status">SYNCING NEURAL CORES...</span>
+                <span id="preloader-pct">0%</span>
+            </div>
         </div>
-        <div class="hero-scroll-indicator"><div class="scroll-line"></div><span class="scroll-text">Scroll</span></div>
+    </div>
+</div>
+
+<div class="anime-cursor" id="cursor"><div class="cursor-crosshair"></div></div>
+<div class="anime-cursor-dot" id="cursor-dot"></div>
+
+<canvas id="anime-canvas"></canvas>
+
+<header id="anime-nav" class="anime-nav">
+    <div class="nav-container">
+        <a href="#hero" class="nav-brand">
+            <span class="brand-kanji">清平</span>
+            <span class="brand-slash">//</span>
+            <span class="brand-en">THANHBINH<span class="brand-dot">.DEV</span></span>
+        </a>
+        <div class="nav-hud-status">
+            <span class="hud-blink-dot"></span>
+            <span class="hud-status-text">PILOT: ONLINE [VN // TOKYO+7]</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="#about" class="nav-item" data-sound="hover"><span class="item-jp">01. 人物</span><span class="item-en">PROFILE</span></a>
+            <a href="#skills" class="nav-item" data-sound="hover"><span class="item-jp">02. 能力</span><span class="item-en">ARSENAL</span></a>
+            <a href="#projects" class="nav-item" data-sound="hover"><span class="item-jp">03. 任務</span><span class="item-en">MISSIONS</span></a>
+            <a href="#contact" class="nav-item" data-sound="hover"><span class="item-jp">04. 交信</span><span class="item-en">TRANSMIT</span></a>
+        </nav>
+        <div class="nav-controls">
+            <button id="sfx-toggle" class="control-btn" title="Toggle Anime Sound Effects" data-sound="click">
+                <span class="control-icon" id="sfx-icon">🔊</span>
+                <span class="control-text" id="sfx-label">SFX: ON</span>
+            </button>
+            <button id="crt-toggle" class="control-btn" title="Toggle CRT Filter" data-sound="click">
+                <span class="control-icon">📺</span>
+                <span class="control-text" id="crt-label">CRT: OFF</span>
+            </button>
+            <button id="nav-burger" class="nav-burger" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header"><span class="drawer-kanji">メニュー</span><span class="drawer-close" id="drawer-close">&times;</span></div>
+    <div class="drawer-links">
+        <a href="#about" class="drawer-link"><span class="drawer-num">01</span><span class="drawer-text">人物 // PROFILE</span></a>
+        <a href="#skills" class="drawer-link"><span class="drawer-num">02</span><span class="drawer-text">能力 // ARSENAL</span></a>
+        <a href="#projects" class="drawer-link"><span class="drawer-num">03</span><span class="drawer-text">任務 // MISSIONS</span></a>
+        <a href="#contact" class="drawer-link"><span class="drawer-num">04</span><span class="drawer-text">交信 // TRANSMIT</span></a>
+    </div>
+</div>
+<main>
+<section id="hero" class="anime-section hero-section">
+    <div class="manga-speedlines"></div>
+    <div class="hero-container">
+        <div class="hero-badge">
+            <span class="badge-kanji">特級開発者</span>
+            <span class="badge-divider">|</span>
+            <span class="badge-text">SPECIAL-GRADE FULL-STACK ARCHITECT // PILOT READY</span>
+        </div>
+        <div class="hero-title-group">
+            <div class="hero-kanji-bg" aria-hidden="true">清平</div>
+            <h1 class="hero-main-title">
+                <span class="title-row"><span class="title-word" data-scramble="THANHBINH">THANHBINH</span></span>
+                <span class="title-row title-row-sub">
+                    <span class="title-slash">//</span>
+                    <span class="title-accent">CREATIVE TECHNOLOGIST</span>
+                </span>
+            </h1>
+        </div>
+        <p class="hero-description">
+            Architecting high-octane <strong>3D WebGL universes</strong>, cybernetic UI systems, and battle-hardened backend engines. Where anime kinetic aesthetics collide with production-grade engineering.
+        </p>
+        <div class="hero-stats-hud">
+            <div class="hud-stat"><span class="stat-name">SYNC RATE</span><span class="stat-val text-neon-pink">99.8%</span></div>
+            <div class="hud-stat"><span class="stat-name">COMBAT CLASS</span><span class="stat-val text-neon-cyan">RANK S+</span></div>
+            <div class="hud-stat"><span class="stat-name">MANA / CODE</span><span class="stat-val text-neon-yellow">OVERDRIVE</span></div>
+            <div class="hud-stat"><span class="stat-name">LOCATION</span><span class="stat-val">VIETNAM [VN]</span></div>
+        </div>
+        <div class="hero-actions">
+            <a href="#projects" class="btn-anime btn-anime-primary" data-sound="slash">
+                <span class="btn-cut"></span>
+                <span class="btn-label-jp">任務一覧を見る</span>
+                <span class="btn-label-en">EXPLORE MISSIONS &rarr;</span>
+            </a>
+            <a href="#contact" class="btn-anime btn-anime-ghost" data-sound="click">
+                <span class="btn-label-jp">交信プロトコル</span>
+                <span class="btn-label-en">INITIATE TRANSMIT</span>
+            </a>
+        </div>
+        <div class="hero-scroll-tag">
+            <span class="scroll-kanji">下へスクロール</span>
+            <div class="scroll-caret"></div>
+            <span class="scroll-en">SCROLL DOWN</span>
+        </div>
     </div>
 </section>
-<section id="about" class="section about-section"><div class="container">
-    <div class="section-header"><span class="section-number">01</span><h2 class="section-title reveal-text">About Me</h2><div class="section-line"></div></div>
-    <div class="about-grid">
-        <div class="about-image-wrapper">
-            <div class="about-image-container">
-                <div class="about-image"><img src="assets/images/avatar.jpg" alt="ThanhBinhDev Avatar" class="about-avatar-img"></div>
-                <div class="about-image-border"></div>
-            </div>
-            <div class="about-stats">
-                <div class="stat-item"><span class="stat-number" data-target="3">0</span><span class="stat-label">Years Exp.</span></div>
-                <div class="stat-item"><span class="stat-number" data-target="50">0</span><span class="stat-label">Projects</span></div>
-                <div class="stat-item"><span class="stat-number" data-target="30">0</span><span class="stat-label">Clients</span></div>
-            </div>
+
+<section id="about" class="anime-section about-section">
+    <div class="section-container">
+        <div class="manga-header">
+            <div class="manga-stamp">EPISODE 01</div>
+            <h2 class="manga-title">人物ファイル <span class="manga-title-en">// CHARACTER DOSSIER</span></h2>
+            <div class="manga-line"></div>
         </div>
-        <div class="about-content">
-            <p class="reveal-text">Xin chào! I am <strong>ThanhBinh</strong>, a passionate Full-Stack Developer based in Vietnam. I specialize in building exceptional digital experiences that live at the intersection of design and technology.</p>
-            <p class="reveal-text">With expertise in modern web technologies, I create performant, accessible, and visually stunning applications. From interactive 3D experiences to scalable backend systems.</p>
-            <p class="reveal-text">When I am not coding, you will find me exploring new technologies, contributing to open-source projects, or enjoying a good cup of Vietnamese coffee.</p>
-            <div class="about-tools"><h3 class="about-tools-title">Daily Tools</h3>
-                <div class="tools-grid">
-                    <div class="tool-item" data-tooltip="VS Code"><img src="assets/icons/vscode.svg" alt="VS Code" class="tool-img"></div>
-                    <div class="tool-item" data-tooltip="Git"><img src="assets/icons/git.svg" alt="Git" class="tool-img"></div>
-                    <div class="tool-item" data-tooltip="Docker"><img src="assets/icons/docker.svg" alt="Docker" class="tool-img"></div>
-                    <div class="tool-item" data-tooltip="Figma"><img src="assets/icons/figma.svg" alt="Figma" class="tool-img"></div>
-                    <div class="tool-item" data-tooltip="Terminal"><img src="assets/icons/terminal.svg" alt="Terminal" class="tool-img"></div>
-                    <div class="tool-item" data-tooltip="Linux"><img src="assets/icons/linux.svg" alt="Linux" class="tool-img"></div>
+        <div class="about-manga-grid">
+            <div class="character-card-panel">
+                <div class="character-frame">
+                    <div class="frame-tag-top">EVA-UNIT // PILOT PROFILE</div>
+                    <div class="character-image-box">
+                        <img src="assets/images/anime_avatar.jpg" alt="ThanhBinh Anime Character Portrait" class="character-img">
+                        <div class="image-scanline"></div>
+                        <div class="frame-corner corner-tl"></div>
+                        <div class="frame-corner corner-tr"></div>
+                        <div class="frame-corner corner-bl"></div>
+                        <div class="frame-corner corner-br"></div>
+                    </div>
+                    <div class="character-meta">
+                        <div class="meta-row"><span class="meta-k">NAME</span><span class="meta-v">清平 / Thanh Binh</span></div>
+                        <div class="meta-row"><span class="meta-k">ROLE</span><span class="meta-v">Full-Stack Creative Tech</span></div>
+                        <div class="meta-row"><span class="meta-k">RANK</span><span class="meta-v highlight-rank">S-CLASS SPECIALIST</span></div>
+                        <div class="meta-row"><span class="meta-k">AFFINITY</span><span class="meta-v">Lightning &amp; Void (Code &amp; 3D)</span></div>
+                    </div>
+                </div>
+                <div class="radar-stats-box">
+                    <div class="radar-stat-item">
+                        <div class="stat-top"><span class="stat-lbl">FRONTEND MASTERY</span><span class="stat-score">98% [S+]</span></div>
+                        <div class="stat-track"><div class="stat-fill" style="width: 98%;"></div></div>
+                    </div>
+                    <div class="radar-stat-item">
+                        <div class="stat-top"><span class="stat-lbl">BACKEND CORE ARCHITECTURE</span><span class="stat-score">94% [S]</span></div>
+                        <div class="stat-track"><div class="stat-fill" style="width: 94%;"></div></div>
+                    </div>
+                    <div class="radar-stat-item">
+                        <div class="stat-top"><span class="stat-lbl">3D WEBGL &amp; SHADER JUTSU</span><span class="stat-score">92% [S]</span></div>
+                        <div class="stat-track"><div class="stat-fill" style="width: 92%;"></div></div>
+                    </div>
+                    <div class="radar-stat-item">
+                        <div class="stat-top"><span class="stat-lbl">AUTOMATION &amp; BOT CLUSTERS</span><span class="stat-score">96% [S+]</span></div>
+                        <div class="stat-track"><div class="stat-fill" style="width: 96%;"></div></div>
+                    </div>
+                    <div class="radar-stat-item">
+                        <div class="stat-top"><span class="stat-lbl">PROBLEM SOLVING / COFFEE</span><span class="stat-score">99% [EX]</span></div>
+                        <div class="stat-track"><div class="stat-fill" style="width: 99%;"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="character-story-panel">
+                <div class="manga-speech-bubble">
+                    <div class="bubble-speaker">THANHBINH // PILOT LOG:</div>
+                    <p class="bubble-text">
+                        "Xin chào! Tôi là <strong>ThanhBinh</strong> — một lập trình viên Full-Stack &amp; Creative Technologist sống giữa nhịp đập của thẩm mỹ anime viễn tưởng và kỹ nghệ code chính xác tuyệt đối. Tôi biến những ý tưởng táo bạo thành hiện thực số sống động."
+                    </p>
+                    <p class="bubble-text">
+                        From designing interactive Three.js 3D realms and buttery GSAP transitions to scaling resilient backend microservices with Docker and Python — every line of code is forged with craftsmanship and battle-ready reliability.
+                    </p>
+                </div>
+
+                <div class="ninja-arsenal-box">
+                    <div class="arsenal-title">
+                        <span class="arsenal-kanji">装備</span>
+                        <span class="arsenal-en">EQUIPPED INVENTORY // DAILY TOOLS</span>
+                    </div>
+                    <div class="arsenal-grid">
+                        <div class="arsenal-item" data-tooltip="VS Code [Level 99]">
+                            <img src="assets/icons/vscode.svg" alt="VS Code" class="arsenal-icon">
+                            <span class="arsenal-name">VS CODE</span>
+                        </div>
+                        <div class="arsenal-item" data-tooltip="Git [Version Control]">
+                            <img src="assets/icons/git.svg" alt="Git" class="arsenal-icon">
+                            <span class="arsenal-name">GIT</span>
+                        </div>
+                        <div class="arsenal-item" data-tooltip="Docker [Containerization]">
+                            <img src="assets/icons/docker.svg" alt="Docker" class="arsenal-icon">
+                            <span class="arsenal-name">DOCKER</span>
+                        </div>
+                        <div class="arsenal-item" data-tooltip="Figma [UI/UX Forge]">
+                            <img src="assets/icons/figma.svg" alt="Figma" class="arsenal-icon">
+                            <span class="arsenal-name">FIGMA</span>
+                        </div>
+                        <div class="arsenal-item" data-tooltip="Terminal [Command Center]">
+                            <img src="assets/icons/terminal.svg" alt="Terminal" class="arsenal-icon">
+                            <span class="arsenal-name">BASH</span>
+                        </div>
+                        <div class="arsenal-item" data-tooltip="Linux [Kernel Mastery]">
+                            <img src="assets/icons/linux.svg" alt="Linux" class="arsenal-icon">
+                            <span class="arsenal-name">LINUX</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div></section>
-<section id="skills" class="section skills-section"><div class="container">
-    <div class="section-header"><span class="section-number">02</span><h2 class="section-title reveal-text">Skills &amp; Expertise</h2><div class="section-line"></div></div>
-    <div class="skills-grid">
-        <div class="skill-card" data-tilt>
-            <div class="skill-card-glow"></div>
-            <div class="skill-card-content">
-                <div class="skill-icon"><img src="assets/icons/frontend.svg" alt="Frontend" class="skill-img"></div>
-                <h3 class="skill-category">Frontend</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">React</span><span class="skill-tag">Next.js</span>
-                    <span class="skill-tag">TypeScript</span><span class="skill-tag">GSAP</span>
-                    <span class="skill-tag">Three.js</span><span class="skill-tag">Tailwind</span>
+</section>
+<section id="skills" class="anime-section skills-section">
+    <div class="section-container">
+        <div class="manga-header">
+            <div class="manga-stamp">EPISODE 02</div>
+            <h2 class="manga-title">秘術と能力 <span class="manga-title-en">// JUTSU &amp; ARSENAL</span></h2>
+            <div class="manga-line"></div>
+        </div>
+
+        <div class="jutsu-cards-grid">
+            <div class="jutsu-card" data-element="lightning">
+                <div class="jutsu-glow"></div>
+                <div class="jutsu-card-top">
+                    <div class="jutsu-icon-box"><img src="assets/icons/frontend.svg" alt="Frontend Jutsu" class="jutsu-icon-img"></div>
+                    <div class="jutsu-rank-badge">RANK S+</div>
                 </div>
-                <div class="skill-bar"><div class="skill-bar-fill" data-width="95"></div></div>
+                <div class="jutsu-name-group">
+                    <span class="element-tag">⚡ 雷遁 // LIGHTNING STYLE</span>
+                    <h3 class="jutsu-title">Frontend Embodiment</h3>
+                </div>
+                <p class="jutsu-desc">Fluid interactive user interfaces, reactive state machinery, component architectures, and responsive micro-animations.</p>
+                <div class="jutsu-tags">
+                    <span class="j-tag">React</span><span class="j-tag">Next.js</span>
+                    <span class="j-tag">TypeScript</span><span class="j-tag">Tailwind</span>
+                    <span class="j-tag">GSAP</span><span class="j-tag">HTML5/CSS3</span>
+                </div>
+                <div class="jutsu-power-gauge">
+                    <div class="power-label"><span>POWER OUTPUT</span><span>9800 / 10000</span></div>
+                    <div class="power-bar"><div class="power-fill" style="width: 98%;"></div></div>
+                </div>
+            </div>
+
+            <div class="jutsu-card" data-element="void">
+                <div class="jutsu-glow"></div>
+                <div class="jutsu-card-top">
+                    <div class="jutsu-icon-box"><img src="assets/icons/backend.svg" alt="Backend Jutsu" class="jutsu-icon-img"></div>
+                    <div class="jutsu-rank-badge">RANK S</div>
+                </div>
+                <div class="jutsu-name-group">
+                    <span class="element-tag">🔮 虚遁 // VOID STYLE</span>
+                    <h3 class="jutsu-title">Backend Core Nexus</h3>
+                </div>
+                <p class="jutsu-desc">Resilient microservices, REST &amp; WebSocket APIs, asynchronous queues, database schemas, and rock-solid security.</p>
+                <div class="jutsu-tags">
+                    <span class="j-tag">Node.js</span><span class="j-tag">Python</span>
+                    <span class="j-tag">Flask</span><span class="j-tag">Express</span>
+                    <span class="j-tag">PostgreSQL</span><span class="j-tag">MongoDB</span>
+                </div>
+                <div class="jutsu-power-gauge">
+                    <div class="power-label"><span>POWER OUTPUT</span><span>9400 / 10000</span></div>
+                    <div class="power-bar"><div class="power-fill" style="width: 94%;"></div></div>
+                </div>
+            </div>
+
+            <div class="jutsu-card" data-element="wind">
+                <div class="jutsu-glow"></div>
+                <div class="jutsu-card-top">
+                    <div class="jutsu-icon-box"><img src="assets/icons/creative.svg" alt="Creative Jutsu" class="jutsu-icon-img"></div>
+                    <div class="jutsu-rank-badge">RANK S</div>
+                </div>
+                <div class="jutsu-name-group">
+                    <span class="element-tag">🌀 風遁 // WIND STYLE</span>
+                    <h3 class="jutsu-title">3D WebGL Realm</h3>
+                </div>
+                <p class="jutsu-desc">Immersive 3D scenes, particle simulations, vertex &amp; fragment GLSL shaders, camera physics, and cinematic motion design.</p>
+                <div class="jutsu-tags">
+                    <span class="j-tag">Three.js</span><span class="j-tag">WebGL</span>
+                    <span class="j-tag">GLSL Shaders</span><span class="j-tag">Anime.js</span>
+                    <span class="j-tag">Blender</span><span class="j-tag">Creative Canvas</span>
+                </div>
+                <div class="jutsu-power-gauge">
+                    <div class="power-label"><span>POWER OUTPUT</span><span>9200 / 10000</span></div>
+                    <div class="power-bar"><div class="power-fill" style="width: 92%;"></div></div>
+                </div>
+            </div>
+
+            <div class="jutsu-card" data-element="iron">
+                <div class="jutsu-glow"></div>
+                <div class="jutsu-card-top">
+                    <div class="jutsu-icon-box"><img src="assets/icons/devops.svg" alt="DevOps Jutsu" class="jutsu-icon-img"></div>
+                    <div class="jutsu-rank-badge">RANK S</div>
+                </div>
+                <div class="jutsu-name-group">
+                    <span class="element-tag">🛡️ 鋼遁 // IRON STYLE</span>
+                    <h3 class="jutsu-title">DevOps Infrastructure</h3>
+                </div>
+                <p class="jutsu-desc">Automated deployment pipelines, Linux server administration, containerized clusters, reverse proxies, and bot clusters.</p>
+                <div class="jutsu-tags">
+                    <span class="j-tag">Docker</span><span class="j-tag">Linux VPS</span>
+                    <span class="j-tag">Nginx</span><span class="j-tag">CI/CD</span>
+                    <span class="j-tag">Systemd</span><span class="j-tag">Puppeteer</span>
+                </div>
+                <div class="jutsu-power-gauge">
+                    <div class="power-label"><span>POWER OUTPUT</span><span>9500 / 10000</span></div>
+                    <div class="power-bar"><div class="power-fill" style="width: 95%;"></div></div>
+                </div>
             </div>
         </div>
-        <div class="skill-card" data-tilt>
-            <div class="skill-card-glow"></div>
-            <div class="skill-card-content">
-                <div class="skill-icon"><img src="assets/icons/backend.svg" alt="Backend" class="skill-img"></div>
-                <h3 class="skill-category">Backend</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Node.js</span><span class="skill-tag">Python</span>
-                    <span class="skill-tag">Flask</span><span class="skill-tag">Express</span>
-                    <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span>
-                </div>
-                <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
-            </div>
-        </div>
-        <div class="skill-card" data-tilt>
-            <div class="skill-card-glow"></div>
-            <div class="skill-card-content">
-                <div class="skill-icon"><img src="assets/icons/creative.svg" alt="Creative / 3D" class="skill-img"></div>
-                <h3 class="skill-category">Creative / 3D</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Three.js</span><span class="skill-tag">WebGL</span>
-                    <span class="skill-tag">GSAP</span><span class="skill-tag">Framer Motion</span>
-                    <span class="skill-tag">Blender</span><span class="skill-tag">Figma</span>
-                </div>
-                <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
-            </div>
-        </div>
-        <div class="skill-card" data-tilt>
-            <div class="skill-card-glow"></div>
-            <div class="skill-card-content">
-                <div class="skill-icon"><img src="assets/icons/devops.svg" alt="DevOps" class="skill-img"></div>
-                <h3 class="skill-category">DevOps</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Docker</span><span class="skill-tag">Linux</span>
-                    <span class="skill-tag">Nginx</span><span class="skill-tag">CI/CD</span>
-                    <span class="skill-tag">AWS</span><span class="skill-tag">VPS</span>
-                </div>
-                <div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
+
+        <div class="manga-ticker">
+            <div class="ticker-content">
+                <span>⚡ JAVASCRIPT &bull; TYPESCRIPT &bull; REACT &bull; NEXT.JS &bull; THREE.JS &bull; GSAP &bull; PYTHON &bull; DOCKER &bull; LINUX &bull; WEBGL &bull; ANIME.JS &bull; POSTGRESQL &bull; FASTAPI &bull;</span>
+                <span>⚡ JAVASCRIPT &bull; TYPESCRIPT &bull; REACT &bull; NEXT.JS &bull; THREE.JS &bull; GSAP &bull; PYTHON &bull; DOCKER &bull; LINUX &bull; WEBGL &bull; ANIME.JS &bull; POSTGRESQL &bull; FASTAPI &bull;</span>
             </div>
         </div>
     </div>
-    <div class="skills-marquee">
-        <div class="marquee-track">
-            <span>JavaScript &diams; TypeScript &diams; React &diams; Next.js &diams; Three.js &diams; GSAP &diams; Node.js &diams; Python &diams; Docker &diams; WebGL &diams; Motion Design &diams; UI/UX &diams;</span>
-            <span>JavaScript &diams; TypeScript &diams; React &diams; Next.js &diams; Three.js &diams; GSAP &diams; Node.js &diams; Python &diams; Docker &diams; WebGL &diams; Motion Design &diams; UI/UX &diams;</span>
+</section>
+
+<section id="projects" class="anime-section projects-section">
+    <div class="section-container">
+        <div class="manga-header">
+            <div class="manga-stamp">EPISODE 03</div>
+            <h2 class="manga-title">特級任務リスト <span class="manga-title-en">// S-CLASS QUEST LOG</span></h2>
+            <div class="manga-line"></div>
+        </div>
+
+        <div class="quest-board">
+            <article class="quest-card" data-sound="hover">
+                <div class="quest-banner">
+                    <span class="quest-id">MISSION // #001</span>
+                    <span class="quest-bounty">BOUNTY: RANK S+</span>
+                </div>
+                <div class="quest-visual">
+                    <img src="assets/images/mission_1.jpg" alt="Neo-Commerce Citadel" class="quest-img">
+                    <div class="quest-overlay-screen">
+                        <span class="quest-status-badge">MISSION COMPLETE</span>
+                    </div>
+                </div>
+                <div class="quest-content">
+                    <h3 class="quest-title">Neo-Commerce Citadel</h3>
+                    <p class="quest-brief">Full-stack next-generation e-commerce empire featuring real-time AI product recommendations, Stripe multi-currency checkout, and real-time inventory telemetry.</p>
+                    <div class="quest-tech-stack">
+                        <span class="q-tag">Next.js</span><span class="q-tag">Prisma</span>
+                        <span class="q-tag">PostgreSQL</span><span class="q-tag">Stripe API</span>
+                    </div>
+                    <div class="quest-footer">
+                        <span class="quest-completion">STATUS: 100% DEPLOYED</span>
+                        <span class="quest-btn">INSPECT MISSION &nearr;</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="quest-card" data-sound="hover">
+                <div class="quest-banner">
+                    <span class="quest-id">MISSION // #002</span>
+                    <span class="quest-bounty">BOUNTY: RANK S</span>
+                </div>
+                <div class="quest-visual">
+                    <img src="assets/images/mission_2.jpg" alt="Shadow Automation Protocol" class="quest-img">
+                    <div class="quest-overlay-screen">
+                        <span class="quest-status-badge">ACTIVE OPERATION</span>
+                    </div>
+                </div>
+                <div class="quest-content">
+                    <h3 class="quest-title">Shadow Automation Protocol</h3>
+                    <p class="quest-brief">Industrial-grade headless browser bot cluster bypassing anti-bot challenges, orchestrating automated tasks via an encrypted Telegram bot console.</p>
+                    <div class="quest-tech-stack">
+                        <span class="q-tag">Node.js</span><span class="q-tag">Puppeteer</span>
+                        <span class="q-tag">Express</span><span class="q-tag">Telegram API</span>
+                    </div>
+                    <div class="quest-footer">
+                        <span class="quest-completion">STATUS: CLUSTER RUNNING</span>
+                        <span class="quest-btn">INSPECT MISSION &nearr;</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="quest-card" data-sound="hover">
+                <div class="quest-banner">
+                    <span class="quest-id">MISSION // #003</span>
+                    <span class="quest-bounty">BOUNTY: RANK A+</span>
+                </div>
+                <div class="quest-visual">
+                    <img src="assets/images/mission_3.jpg" alt="Locket Gold Transmutation" class="quest-img">
+                    <div class="quest-overlay-screen">
+                        <span class="quest-status-badge">OPERATIONAL</span>
+                    </div>
+                </div>
+                <div class="quest-content">
+                    <h3 class="quest-title">Locket Gold Transmutation</h3>
+                    <p class="quest-brief">High-throughput automated subscription platform with instant account provision, payment gateway callbacks, and SQLite ledger management.</p>
+                    <div class="quest-tech-stack">
+                        <span class="q-tag">Python</span><span class="q-tag">Flask</span>
+                        <span class="q-tag">Gunicorn</span><span class="q-tag">SQLite</span>
+                    </div>
+                    <div class="quest-footer">
+                        <span class="quest-completion">STATUS: 50,000+ USERS</span>
+                        <span class="quest-btn">INSPECT MISSION &nearr;</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="quest-card" data-sound="hover">
+                <div class="quest-banner">
+                    <span class="quest-id">MISSION // #004</span>
+                    <span class="quest-bounty">BOUNTY: RANK S</span>
+                </div>
+                <div class="quest-visual">
+                    <img src="assets/images/mission_4.jpg" alt="Dimension Zero Interactive" class="quest-img">
+                    <div class="quest-overlay-screen">
+                        <span class="quest-status-badge">LIVE UNIVERSE</span>
+                    </div>
+                </div>
+                <div class="quest-content">
+                    <h3 class="quest-title">Dimension Zero Portfolio</h3>
+                    <p class="quest-brief">The anime creative technologist universe you are currently exploring! 3D Sakura physics, Web Audio synthesizer, Manga halftone grids, and smooth kinetic interactions.</p>
+                    <div class="quest-tech-stack">
+                        <span class="q-tag">Three.js</span><span class="q-tag">GSAP</span>
+                        <span class="q-tag">Anime.js</span><span class="q-tag">Web Audio API</span>
+                    </div>
+                    <div class="quest-footer">
+                        <span class="quest-completion">STATUS: 60 FPS LIVE</span>
+                        <span class="quest-btn">INSPECT MISSION &nearr;</span>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
-</div></section>
-<section id="projects" class="section projects-section"><div class="container">
-    <div class="section-header"><span class="section-number">03</span><h2 class="section-title reveal-text">Featured Projects</h2><div class="section-line"></div></div>
-    <div class="projects-list">
-        <article class="project-item">
-            <span class="project-number">01</span>
-            <div class="project-visual"><div class="project-thumb"><img src="assets/images/project-1.jpg" alt="E-Commerce Platform" class="project-img"></div></div>
-            <div class="project-info">
-                <h3 class="project-title">E-Commerce Platform</h3>
-                <p class="project-desc">Full-stack e-commerce with AI features, payment integration, and admin dashboard.</p>
-                <div class="project-tech"><span>Next.js</span><span>Prisma</span><span>PostgreSQL</span><span>Stripe</span></div>
+</section>
+
+<section id="contact" class="anime-section contact-section">
+    <div class="section-container">
+        <div class="manga-header">
+            <div class="manga-stamp">EPISODE 04</div>
+            <h2 class="manga-title">交信ターミナル <span class="manga-title-en">// TRANSMISSION TERMINAL</span></h2>
+            <div class="manga-line"></div>
+        </div>
+
+        <div class="terminal-grid">
+            <div class="terminal-dossier">
+                <div class="terminal-header-bar">
+                    <span class="term-dot dot-red"></span>
+                    <span class="term-dot dot-yellow"></span>
+                    <span class="term-dot dot-green"></span>
+                    <span class="term-title">COMMS_CHANNEL // FREQ: 3456 MHz</span>
+                </div>
+                <h3 class="terminal-heading">INITIATE UPLINK.</h3>
+                <p class="terminal-desc">
+                    Ready to summon me for high-voltage creative web projects, bespoke 3D applications, or scalable backend automation? My transmission channels are permanently open.
+                </p>
+
+                <div class="uplink-channels">
+                    <a href="https://t.me/thanhbinhdev" target="_blank" rel="noopener noreferrer" class="channel-link" data-sound="hover">
+                        <div class="channel-icon"><img src="assets/icons/telegram.svg" alt="Telegram" class="c-icon-img"></div>
+                        <div class="channel-data">
+                            <span class="channel-name">TELEGRAM UPLINK</span>
+                            <span class="channel-handle">@thanhbinhdev</span>
+                        </div>
+                        <span class="channel-arrow">&rarr;</span>
+                    </a>
+
+                    <a href="https://github.com/thanhbinhdev" target="_blank" rel="noopener noreferrer" class="channel-link" data-sound="hover">
+                        <div class="channel-icon"><img src="assets/icons/github.svg" alt="GitHub" class="c-icon-img"></div>
+                        <div class="channel-data">
+                            <span class="channel-name">GITHUB REPO ARCHIVES</span>
+                            <span class="channel-handle">github.com/thanhbinhdev</span>
+                        </div>
+                        <span class="channel-arrow">&rarr;</span>
+                    </a>
+
+                    <a href="mailto:contact@thanhbinh.dev" class="channel-link" data-sound="hover">
+                        <div class="channel-icon"><img src="assets/icons/email.svg" alt="Email" class="c-icon-img"></div>
+                        <div class="channel-data">
+                            <span class="channel-name">DIRECT NEURAL MAIL</span>
+                            <span class="channel-handle">contact@thanhbinh.dev</span>
+                        </div>
+                        <span class="channel-arrow">&rarr;</span>
+                    </a>
+                </div>
             </div>
-            <div class="project-arrow"><span class="arrow-icon">&nearr;</span></div>
-        </article>
-        <article class="project-item">
-            <span class="project-number">02</span>
-            <div class="project-visual"><div class="project-thumb"><img src="assets/images/project-2.jpg" alt="Bypass Automation Tool" class="project-img"></div></div>
-            <div class="project-info">
-                <h3 class="project-title">Bypass Automation Tool</h3>
-                <p class="project-desc">Advanced automation with Telegram bot, real-time processing, and web interface.</p>
-                <div class="project-tech"><span>Node.js</span><span>Express</span><span>Puppeteer</span><span>Telegram API</span></div>
-            </div>
-            <div class="project-arrow"><span class="arrow-icon">&nearr;</span></div>
-        </article>
-        <article class="project-item">
-            <span class="project-number">03</span>
-            <div class="project-visual"><div class="project-thumb"><img src="assets/images/project-3.jpg" alt="Locket Gold Service" class="project-img"></div></div>
-            <div class="project-info">
-                <h3 class="project-title">Locket Gold Service</h3>
-                <p class="project-desc">Premium social app service with account management and secure payment flow.</p>
-                <div class="project-tech"><span>Python</span><span>Flask</span><span>SQLite</span><span>Gunicorn</span></div>
-            </div>
-            <div class="project-arrow"><span class="arrow-icon">&nearr;</span></div>
-        </article>
-        <article class="project-item">
-            <span class="project-number">04</span>
-            <div class="project-visual"><div class="project-thumb"><img src="assets/images/project-4.jpg" alt="3D Interactive Portfolio" class="project-img"></div></div>
-            <div class="project-info">
-                <h3 class="project-title">3D Interactive Portfolio</h3>
-                <p class="project-desc">This website! Built with Three.js, GSAP, and vanilla JS with particle systems.</p>
-                <div class="project-tech"><span>Three.js</span><span>GSAP</span><span>WebGL</span><span>CSS3</span></div>
-            </div>
-            <div class="project-arrow"><span class="arrow-icon">&nearr;</span></div>
-        </article>
-    </div>
-</div></section>
-<section id="contact" class="section contact-section"><div class="container">
-    <div class="section-header"><span class="section-number">04</span><h2 class="section-title reveal-text">Get In Touch</h2><div class="section-line"></div></div>
-    <div class="contact-grid">
-        <div class="contact-info">
-            <h3 class="contact-heading">Let's work together.</h3>
-            <p class="contact-text">Have a project in mind or just want to chat? I am always open to new opportunities and interesting collaborations.</p>
-            <div class="contact-links">
-                <a href="https://t.me/thanhbinhdev" target="_blank" rel="noopener noreferrer" class="contact-link-item">
-                    <span class="contact-link-icon"><img src="assets/icons/telegram.svg" alt="Telegram" class="contact-img"></span>
-                    <span class="contact-link-label">Telegram</span>
-                    <span class="contact-link-value">@thanhbinhdev</span>
-                </a>
-                <a href="https://github.com/thanhbinhdev" target="_blank" rel="noopener noreferrer" class="contact-link-item">
-                    <span class="contact-link-icon"><img src="assets/icons/github.svg" alt="GitHub" class="contact-img"></span>
-                    <span class="contact-link-label">GitHub</span>
-                    <span class="contact-link-value">thanhbinhdev</span>
-                </a>
-                <a href="mailto:contact@thanhbinh.dev" class="contact-link-item">
-                    <span class="contact-link-icon"><img src="assets/icons/email.svg" alt="Email" class="contact-img"></span>
-                    <span class="contact-link-label">Email</span>
-                    <span class="contact-link-value">contact@thanhbinh.dev</span>
-                </a>
+
+            <div class="terminal-form-card">
+                <form id="anime-form" class="anime-form">
+                    <div class="form-title-bar">
+                        <span>[ TRANSMISSION ENCRYPTION: AES-256 GCM ]</span>
+                        <span class="form-ready-tag">READY</span>
+                    </div>
+
+                    <div class="anime-input-group">
+                        <label for="form-name" class="anime-label"><span class="lbl-num">01 //</span> PILOT IDENTIFIER [YOUR NAME]</label>
+                        <input type="text" id="form-name" class="anime-input" placeholder="e.g. Commander Shinji" required autocomplete="off">
+                    </div>
+
+                    <div class="anime-input-group">
+                        <label for="form-email" class="anime-label"><span class="lbl-num">02 //</span> COMM FREQUENCY [YOUR EMAIL]</label>
+                        <input type="email" id="form-email" class="anime-input" placeholder="e.g. pilot@nerv.tech" required autocomplete="off">
+                    </div>
+
+                    <div class="anime-input-group">
+                        <label for="form-message" class="anime-label"><span class="lbl-num">03 //</span> TRANSMISSION PAYLOAD [MESSAGE]</label>
+                        <textarea id="form-message" class="anime-textarea" rows="4" placeholder="Brief me on your mission scope, timeline, and requirements..." required></textarea>
+                    </div>
+
+                    <button type="submit" id="btn-transmit" class="btn-anime btn-anime-primary w-full" data-sound="slash">
+                        <span class="btn-cut"></span>
+                        <span class="btn-label-jp">データ送信</span>
+                        <span class="btn-label-en" id="transmit-btn-text">TRANSMIT PAYLOAD &rarr;</span>
+                    </button>
+                    <div id="form-status" class="form-status-msg"></div>
+                </form>
             </div>
         </div>
-        <form class="contact-form" id="contact-form">
-            <div class="form-group"><input type="text" id="name" class="form-input" placeholder="Your Name" required><label for="name" class="form-label">Your Name</label></div>
-            <div class="form-group"><input type="email" id="email" class="form-input" placeholder="Your Email" required><label for="email" class="form-label">Your Email</label></div>
-            <div class="form-group"><textarea id="message" class="form-input form-textarea" placeholder="Your Message" rows="5" required></textarea><label for="message" class="form-label">Your Message</label></div>
-            <button type="submit" class="btn btn-primary btn-submit magnetic-btn"><span class="btn-text">Send Message</span><span class="btn-icon">&rarr;</span></button>
-        </form>
     </div>
-</div></section>
+</section>
 </main>
-<footer id="footer"><div class="container footer-content">
-    <div class="footer-logo"><a href="#hero" class="logo-link"><span class="logo-bracket">&lt;</span><span class="logo-text">ThanhBinhDev</span><span class="logo-bracket">/&gt;</span></a></div>
-    <div class="footer-copy">&copy; 2026 Crafted with passion</div>
-    <div class="footer-socials">
-        <a href="https://github.com/thanhbinhdev" target="_blank" rel="noopener noreferrer" class="footer-social-link"><img src="assets/icons/github.svg" alt="GitHub" width="18" height="18"></a>
-        <a href="https://t.me/thanhbinhdev" target="_blank" rel="noopener noreferrer" class="footer-social-link"><img src="assets/icons/telegram.svg" alt="Telegram" width="18" height="18"></a>
-        <a href="#hero" class="footer-social-link" title="Back to top"><img src="assets/icons/arrow-up.svg" alt="Back to top" width="18" height="18"></a>
+
+<footer class="anime-footer">
+    <div class="footer-container">
+        <div class="footer-manga-tag">
+            <span class="end-stamp">TO BE CONTINUED...</span>
+            <span class="end-jp">次回に続く // SEASON 2026</span>
+        </div>
+        <div class="footer-credits">
+            DIRECTED &amp; PROGRAMMED BY <strong>THANHBINHDEV</strong> &bull; ALL RIGHTS RESERVED
+        </div>
+        <div class="footer-right-group">
+            <div class="footer-icons">
+                <a href="https://github.com/thanhbinhdev" target="_blank" rel="noopener noreferrer" class="f-icon" title="GitHub"><img src="assets/icons/github.svg" alt="GitHub" width="18" height="18"></a>
+                <a href="https://t.me/thanhbinhdev" target="_blank" rel="noopener noreferrer" class="f-icon" title="Telegram"><img src="assets/icons/telegram.svg" alt="Telegram" width="18" height="18"></a>
+            </div>
+            <a href="#hero" class="btn-booster" title="Booster to top" data-sound="click">
+                <img src="assets/icons/arrow-up.svg" alt="Top" width="18" height="18">
+            </a>
+        </div>
     </div>
-</div></footer>
+</footer>
+
 <script src="app.js"></script>
 </body>
 </html>
