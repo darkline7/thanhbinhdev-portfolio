@@ -67,7 +67,7 @@
     <div class="about-grid">
         <div class="about-image-wrapper">
             <div class="about-image-container">
-                <div class="about-image"><div class="about-image-placeholder"><svg class="avatar-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" rx="24" fill="url(#avatar-grad)"/><circle cx="100" cy="75" r="32" fill="rgba(255,255,255,0.15)"/><path d="M100 115c-35 0-60 20-60 45v10c0 8 5 14 12 14h96c7 0 12-6 12-14v-10c0-25-25-45-60-45z" fill="rgba(255,255,255,0.12)"/><path d="M80 58l8-8a4 4 0 015.6 0L100 56.4 106.4 50a4 4 0 015.6 0l8 8" stroke="rgba(255,255,255,0.6)" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="88" cy="74" r="4" fill="rgba(255,255,255,0.5)"/><circle cx="112" cy="74" r="4" fill="rgba(255,255,255,0.5)"/><path d="M92 88a12 12 0 0016 0" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="round" fill="none"/><rect x="70" y="125" rx="4" width="60" height="6" fill="rgba(255,255,255,0.08)"/><rect x="80" y="137" rx="3" width="40" height="4" fill="rgba(255,255,255,0.06)"/><defs><linearGradient id="avatar-grad" x1="0" y1="0" x2="200" y2="200"><stop stop-color="#6c63ff"/><stop offset="1" stop-color="#e040fb"/></linearGradient></defs></svg></div></div>
+                <div class="about-image"><img src="assets/images/avatar.jpg" alt="ThanhBinhDev Avatar" class="about-avatar-img"></div>
                 <div class="about-image-border"></div>
             </div>
             <div class="about-stats">
@@ -82,68 +82,167 @@
             <p class="reveal-text">When I am not coding, you will find me exploring new technologies, contributing to open-source projects, or enjoying a good cup of Vietnamese coffee.</p>
             <div class="about-tools"><h3 class="about-tools-title">Daily Tools</h3>
                 <div class="tools-grid">
-                    <div class="tool-item" data-tooltip="VS Code"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 2.5L7 12l9.5 9.5 4-2V4.5l-4-2z"/><path d="M7 12L2.5 8V16L7 12z"/><path d="M16.5 2.5L7 12"/><path d="M16.5 21.5L7 12"/></svg></div>
-                    <div class="tool-item" data-tooltip="Git"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M6 8.5v4c0 1.7 1.3 3 3 3h3.5"/><path d="M18 8.5V15.5"/></svg></div>
-                    <div class="tool-item" data-tooltip="Docker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="10" width="22" height="9" rx="2"/><rect x="4" y="12.5" width="3" height="3"/><rect x="8.5" y="12.5" width="3" height="3"/><rect x="13" y="12.5" width="3" height="3"/><rect x="8.5" y="7" width="3" height="3"/><rect x="13" y="7" width="3" height="3"/><path d="M13 4h3v3"/></svg></div>
-                    <div class="tool-item" data-tooltip="Figma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H8.5a3.5 3.5 0 000 7H12V2z"/><path d="M12 9H8.5a3.5 3.5 0 000 7H12V9z"/><path d="M12 16H8.5a3.5 3.5 0 103.5 3.5V16z"/><path d="M12 2h3.5a3.5 3.5 0 010 7H12V2z"/><circle cx="15.5" cy="12.5" r="3.5"/></svg></div>
-                    <div class="tool-item" data-tooltip="Terminal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><polyline points="6 10 10 13 6 16"/><line x1="13" y1="16" x2="18" y2="16"/></svg></div>
-                    <div class="tool-item" data-tooltip="Linux"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="9" rx="5" ry="7"/><circle cx="10" cy="8" r="1" fill="currentColor"/><circle cx="14" cy="8" r="1" fill="currentColor"/><path d="M10 11.5c.6.7 1.3 1 2 1s1.4-.3 2-1"/><path d="M7 16c-2 1-4 3.5-3 4.5s3-.5 4-1.5"/><path d="M17 16c2 1 4 3.5 3 4.5s-3-.5-4-1.5"/></svg></div>
+                    <div class="tool-item" data-tooltip="VS Code"><img src="assets/icons/vscode.svg" alt="VS Code" class="tool-img"></div>
+                    <div class="tool-item" data-tooltip="Git"><img src="assets/icons/git.svg" alt="Git" class="tool-img"></div>
+                    <div class="tool-item" data-tooltip="Docker"><img src="assets/icons/docker.svg" alt="Docker" class="tool-img"></div>
+                    <div class="tool-item" data-tooltip="Figma"><img src="assets/icons/figma.svg" alt="Figma" class="tool-img"></div>
+                    <div class="tool-item" data-tooltip="Terminal"><img src="assets/icons/terminal.svg" alt="Terminal" class="tool-img"></div>
+                    <div class="tool-item" data-tooltip="Linux"><img src="assets/icons/linux.svg" alt="Linux" class="tool-img"></div>
                 </div>
             </div>
         </div>
     </div>
 </div></section>
 <section id="skills" class="section skills-section"><div class="container">
-    <div class="section-header"><span class="section-number">02</span><h2 class="section-title reveal-text">Skills & Expertise</h2><div class="section-line"></div></div>
+    <div class="section-header"><span class="section-number">02</span><h2 class="section-title reveal-text">Skills &amp; Expertise</h2><div class="section-line"></div></div>
     <div class="skills-grid">
-        <div class="skill-card" data-tilt><div class="skill-card-glow"></div><div class="skill-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 8 4 16 10 24"/><polyline points="22 8 28 16 22 24"/><line x1="18" y1="6" x2="14" y2="26"/></svg></div><h3 class="skill-title">Frontend</h3><div class="skill-tags"><span class="skill-tag">React</span><span class="skill-tag">Next.js</span><span class="skill-tag">TypeScript</span><span class="skill-tag">GSAP</span><span class="skill-tag">Three.js</span><span class="skill-tag">Tailwind</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="95"></div></div></div>
-        <div class="skill-card" data-tilt><div class="skill-card-glow"></div><div class="skill-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="24" height="24" rx="4"/><circle cx="16" cy="16" r="4"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4"/><path d="M7.8 7.8l2.8 2.8M21.4 21.4l2.8 2.8M7.8 24.2l2.8-2.8M21.4 10.6l2.8-2.8"/></svg></div><h3 class="skill-title">Backend</h3><div class="skill-tags"><span class="skill-tag">Node.js</span><span class="skill-tag">Python</span><span class="skill-tag">Flask</span><span class="skill-tag">Express</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div></div>
-        <div class="skill-card" data-tilt><div class="skill-card-glow"></div><div class="skill-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l3 6 6.5 1-4.7 4.6 1.1 6.4L16 19l-5.9 3 1.1-6.4L6.5 11l6.5-1L16 4z"/><circle cx="16" cy="16" r="12"/></svg></div><h3 class="skill-title">Creative / 3D</h3><div class="skill-tags"><span class="skill-tag">Three.js</span><span class="skill-tag">WebGL</span><span class="skill-tag">GSAP</span><span class="skill-tag">Framer Motion</span><span class="skill-tag">Blender</span><span class="skill-tag">Figma</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div></div>
-        <div class="skill-card" data-tilt><div class="skill-card-glow"></div><div class="skill-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4v6"/><path d="M10 7l2.5 5.5"/><path d="M22 7l-2.5 5.5"/><circle cx="16" cy="16" r="5"/><path d="M12.5 22L6 28"/><path d="M19.5 22L26 28"/><path d="M16 21v7"/></svg></div><h3 class="skill-title">DevOps</h3><div class="skill-tags"><span class="skill-tag">Docker</span><span class="skill-tag">Linux</span><span class="skill-tag">Nginx</span><span class="skill-tag">CI/CD</span><span class="skill-tag">AWS</span><span class="skill-tag">VPS</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        <div class="skill-card" data-tilt>
+            <div class="skill-card-glow"></div>
+            <div class="skill-card-content">
+                <div class="skill-icon"><img src="assets/icons/frontend.svg" alt="Frontend" class="skill-img"></div>
+                <h3 class="skill-category">Frontend</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">React</span><span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">TypeScript</span><span class="skill-tag">GSAP</span>
+                    <span class="skill-tag">Three.js</span><span class="skill-tag">Tailwind</span>
+                </div>
+                <div class="skill-bar"><div class="skill-bar-fill" data-width="95"></div></div>
+            </div>
+        </div>
+        <div class="skill-card" data-tilt>
+            <div class="skill-card-glow"></div>
+            <div class="skill-card-content">
+                <div class="skill-icon"><img src="assets/icons/backend.svg" alt="Backend" class="skill-img"></div>
+                <h3 class="skill-category">Backend</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Node.js</span><span class="skill-tag">Python</span>
+                    <span class="skill-tag">Flask</span><span class="skill-tag">Express</span>
+                    <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span>
+                </div>
+                <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
+            </div>
+        </div>
+        <div class="skill-card" data-tilt>
+            <div class="skill-card-glow"></div>
+            <div class="skill-card-content">
+                <div class="skill-icon"><img src="assets/icons/creative.svg" alt="Creative / 3D" class="skill-img"></div>
+                <h3 class="skill-category">Creative / 3D</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Three.js</span><span class="skill-tag">WebGL</span>
+                    <span class="skill-tag">GSAP</span><span class="skill-tag">Framer Motion</span>
+                    <span class="skill-tag">Blender</span><span class="skill-tag">Figma</span>
+                </div>
+                <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+            </div>
+        </div>
+        <div class="skill-card" data-tilt>
+            <div class="skill-card-glow"></div>
+            <div class="skill-card-content">
+                <div class="skill-icon"><img src="assets/icons/devops.svg" alt="DevOps" class="skill-img"></div>
+                <h3 class="skill-category">DevOps</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Docker</span><span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Nginx</span><span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">AWS</span><span class="skill-tag">VPS</span>
+                </div>
+                <div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
+        </div>
     </div>
-    <div class="marquee-container"><div class="marquee-track">
-        <div class="marquee-content"><span>JavaScript</span><span class="marquee-dot">◆</span><span>TypeScript</span><span class="marquee-dot">◆</span><span>React</span><span class="marquee-dot">◆</span><span>Next.js</span><span class="marquee-dot">◆</span><span>Three.js</span><span class="marquee-dot">◆</span><span>GSAP</span><span class="marquee-dot">◆</span><span>Node.js</span><span class="marquee-dot">◆</span><span>Python</span><span class="marquee-dot">◆</span><span>Docker</span><span class="marquee-dot">◆</span><span>WebGL</span><span class="marquee-dot">◆</span><span>Motion Design</span><span class="marquee-dot">◆</span><span>UI/UX</span><span class="marquee-dot">◆</span></div>
-        <div class="marquee-content" aria-hidden="true"><span>JavaScript</span><span class="marquee-dot">◆</span><span>TypeScript</span><span class="marquee-dot">◆</span><span>React</span><span class="marquee-dot">◆</span><span>Next.js</span><span class="marquee-dot">◆</span><span>Three.js</span><span class="marquee-dot">◆</span><span>GSAP</span><span class="marquee-dot">◆</span><span>Node.js</span><span class="marquee-dot">◆</span><span>Python</span><span class="marquee-dot">◆</span><span>Docker</span><span class="marquee-dot">◆</span><span>WebGL</span><span class="marquee-dot">◆</span><span>Motion Design</span><span class="marquee-dot">◆</span><span>UI/UX</span><span class="marquee-dot">◆</span></div>
-    </div></div>
+    <div class="skills-marquee">
+        <div class="marquee-track">
+            <span>JavaScript &diams; TypeScript &diams; React &diams; Next.js &diams; Three.js &diams; GSAP &diams; Node.js &diams; Python &diams; Docker &diams; WebGL &diams; Motion Design &diams; UI/UX &diams;</span>
+            <span>JavaScript &diams; TypeScript &diams; React &diams; Next.js &diams; Three.js &diams; GSAP &diams; Node.js &diams; Python &diams; Docker &diams; WebGL &diams; Motion Design &diams; UI/UX &diams;</span>
+        </div>
+    </div>
 </div></section>
 <section id="projects" class="section projects-section"><div class="container">
     <div class="section-header"><span class="section-number">03</span><h2 class="section-title reveal-text">Featured Projects</h2><div class="section-line"></div></div>
     <div class="projects-list">
-        <div class="project-item"><div class="project-index">01</div><div class="project-info"><h3 class="project-name">E-Commerce Platform</h3><p class="project-desc">Full-stack e-commerce with AI features, payment integration, and admin dashboard.</p><div class="project-tech"><span>Next.js</span><span>Prisma</span><span>PostgreSQL</span><span>Stripe</span></div></div><div class="project-visual"><div class="project-mockup"><div class="mockup-screen" style="background:linear-gradient(135deg,#6c63ff,#e040fb)"><div class="mockup-dots"><span></span><span></span><span></span></div><div class="mockup-content"><div class="mockup-line" style="width:80%"></div><div class="mockup-line" style="width:60%"></div><div class="mockup-line" style="width:45%"></div></div></div></div></div><div class="project-arrow magnetic-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div>
-        <div class="project-item"><div class="project-index">02</div><div class="project-info"><h3 class="project-name">Bypass Automation Tool</h3><p class="project-desc">Advanced automation with Telegram bot, real-time processing, and web interface.</p><div class="project-tech"><span>Node.js</span><span>Express</span><span>Puppeteer</span><span>Telegram API</span></div></div><div class="project-visual"><div class="project-mockup"><div class="mockup-screen" style="background:linear-gradient(135deg,#f093fb,#f5576c)"><div class="mockup-dots"><span></span><span></span><span></span></div><div class="mockup-content"><div class="mockup-line" style="width:50%"></div><div class="mockup-line" style="width:70%"></div><div class="mockup-line" style="width:90%"></div></div></div></div></div><div class="project-arrow magnetic-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div>
-        <div class="project-item"><div class="project-index">03</div><div class="project-info"><h3 class="project-name">Locket Gold Service</h3><p class="project-desc">Premium social app service with account management and secure payment flow.</p><div class="project-tech"><span>Python</span><span>Flask</span><span>SQLite</span><span>Gunicorn</span></div></div><div class="project-visual"><div class="project-mockup"><div class="mockup-screen" style="background:linear-gradient(135deg,#4facfe,#00f2fe)"><div class="mockup-dots"><span></span><span></span><span></span></div><div class="mockup-content"><div class="mockup-line" style="width:75%"></div><div class="mockup-line" style="width:55%"></div><div class="mockup-line" style="width:35%"></div></div></div></div></div><div class="project-arrow magnetic-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div>
-        <div class="project-item"><div class="project-index">04</div><div class="project-info"><h3 class="project-name">3D Interactive Portfolio</h3><p class="project-desc">This website! Built with Three.js, GSAP, and vanilla JS with particle systems.</p><div class="project-tech"><span>Three.js</span><span>GSAP</span><span>WebGL</span><span>CSS3</span></div></div><div class="project-visual"><div class="project-mockup"><div class="mockup-screen" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)"><div class="mockup-dots"><span></span><span></span><span></span></div><div class="mockup-content"><div class="mockup-line" style="width:45%"></div><div class="mockup-line" style="width:65%"></div><div class="mockup-line" style="width:85%"></div></div></div></div></div><div class="project-arrow magnetic-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div>
+        <article class="project-item">
+            <span class="project-number">01</span>
+            <div class="project-visual"><div class="project-thumb"><img src="assets/images/project-1.jpg" alt="E-Commerce Platform" class="project-img"></div></div>
+            <div class="project-info">
+                <h3 class="project-title">E-Commerce Platform</h3>
+                <p class="project-desc">Full-stack e-commerce with AI features, payment integration, and admin dashboard.</p>
+                <div class="project-tech"><span>Next.js</span><span>Prisma</span><span>PostgreSQL</span><span>Stripe</span></div>
+            </div>
+            <div class="project-arrow"><span class="arrow-icon">&nearr;</span></div>
+        </article>
+        <article class="project-item">
+            <span class="project-number">02</span>
+            <div class="project-visual"><div class="project-thumb"><img src="assets/images/project-2.jpg" alt="Bypass Automation Tool" class="project-img"></div></div>
+            <div class="project-info">
+                <h3 class="project-title">Bypass Automation Tool</h3>
+                <p class="project-desc">Advanced automation with Telegram bot, real-time processing, and web interface.</p>
+                <div class="project-tech"><span>Node.js</span><span>Express</span><span>Puppeteer</span><span>Telegram API</span></div>
+            </div>
+            <div class="project-arrow"><span class="arrow-icon">&nearr;</span></div>
+        </article>
+        <article class="project-item">
+            <span class="project-number">03</span>
+            <div class="project-visual"><div class="project-thumb"><img src="assets/images/project-3.jpg" alt="Locket Gold Service" class="project-img"></div></div>
+            <div class="project-info">
+                <h3 class="project-title">Locket Gold Service</h3>
+                <p class="project-desc">Premium social app service with account management and secure payment flow.</p>
+                <div class="project-tech"><span>Python</span><span>Flask</span><span>SQLite</span><span>Gunicorn</span></div>
+            </div>
+            <div class="project-arrow"><span class="arrow-icon">&nearr;</span></div>
+        </article>
+        <article class="project-item">
+            <span class="project-number">04</span>
+            <div class="project-visual"><div class="project-thumb"><img src="assets/images/project-4.jpg" alt="3D Interactive Portfolio" class="project-img"></div></div>
+            <div class="project-info">
+                <h3 class="project-title">3D Interactive Portfolio</h3>
+                <p class="project-desc">This website! Built with Three.js, GSAP, and vanilla JS with particle systems.</p>
+                <div class="project-tech"><span>Three.js</span><span>GSAP</span><span>WebGL</span><span>CSS3</span></div>
+            </div>
+            <div class="project-arrow"><span class="arrow-icon">&nearr;</span></div>
+        </article>
     </div>
 </div></section>
 <section id="contact" class="section contact-section"><div class="container">
     <div class="section-header"><span class="section-number">04</span><h2 class="section-title reveal-text">Get In Touch</h2><div class="section-line"></div></div>
     <div class="contact-grid">
         <div class="contact-info">
-            <h3 class="contact-heading">Let's work<br>together.</h3>
+            <h3 class="contact-heading">Let's work together.</h3>
             <p class="contact-text">Have a project in mind or just want to chat? I am always open to new opportunities and interesting collaborations.</p>
             <div class="contact-links">
-                <a href="https://t.me/thanhbinhdev" target="_blank" rel="noopener" class="contact-link-item magnetic-btn"><span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 4.4L2.4 11.4c-.6.2-.6.8 0 1l4.3 1.6 1.6 5.2c.1.4.6.5.9.3l2.3-1.9 4.5 3.3c.4.3 1 .1 1.1-.4L21.8 5.2c.1-.6-.3-1-.6-.8z"/><path d="M8.3 14L18 6.5"/></svg></span><span class="contact-link-label">Telegram</span><span class="contact-link-value">@thanhbinhdev</span></a>
-                <a href="https://github.com/thanhbinhdev" target="_blank" rel="noopener" class="contact-link-item magnetic-btn"><span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></span><span class="contact-link-label">GitHub</span><span class="contact-link-value">thanhbinhdev</span></a>
-                <a href="mailto:contact@thanhbinh.dev" class="contact-link-item magnetic-btn"><span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><polyline points="22 7 12 14 2 7"/></svg></span><span class="contact-link-label">Email</span><span class="contact-link-value">contact@thanhbinh.dev</span></a>
+                <a href="https://t.me/thanhbinhdev" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+                    <span class="contact-link-icon"><img src="assets/icons/telegram.svg" alt="Telegram" class="contact-img"></span>
+                    <span class="contact-link-label">Telegram</span>
+                    <span class="contact-link-value">@thanhbinhdev</span>
+                </a>
+                <a href="https://github.com/thanhbinhdev" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+                    <span class="contact-link-icon"><img src="assets/icons/github.svg" alt="GitHub" class="contact-img"></span>
+                    <span class="contact-link-label">GitHub</span>
+                    <span class="contact-link-value">thanhbinhdev</span>
+                </a>
+                <a href="mailto:contact@thanhbinh.dev" class="contact-link-item">
+                    <span class="contact-link-icon"><img src="assets/icons/email.svg" alt="Email" class="contact-img"></span>
+                    <span class="contact-link-label">Email</span>
+                    <span class="contact-link-value">contact@thanhbinh.dev</span>
+                </a>
             </div>
         </div>
-        <div class="contact-form-wrapper">
-            <form class="contact-form" id="contact-form">
-                <div class="form-group"><input type="text" id="name" name="name" required autocomplete="name"><label for="name">Your Name</label><div class="form-line"></div></div>
-                <div class="form-group"><input type="email" id="email" name="email" required autocomplete="email"><label for="email">Your Email</label><div class="form-line"></div></div>
-                <div class="form-group"><textarea id="message" name="message" rows="4" required></textarea><label for="message">Your Message</label><div class="form-line"></div></div>
-                <button type="submit" class="btn btn-primary btn-submit magnetic-btn"><span class="btn-text">Send Message</span><span class="btn-icon">→</span></button>
-            </form>
-        </div>
+        <form class="contact-form" id="contact-form">
+            <div class="form-group"><input type="text" id="name" class="form-input" placeholder="Your Name" required><label for="name" class="form-label">Your Name</label></div>
+            <div class="form-group"><input type="email" id="email" class="form-input" placeholder="Your Email" required><label for="email" class="form-label">Your Email</label></div>
+            <div class="form-group"><textarea id="message" class="form-input form-textarea" placeholder="Your Message" rows="5" required></textarea><label for="message" class="form-label">Your Message</label></div>
+            <button type="submit" class="btn btn-primary btn-submit magnetic-btn"><span class="btn-text">Send Message</span><span class="btn-icon">&rarr;</span></button>
+        </form>
     </div>
 </div></section>
 </main>
-<footer class="footer"><div class="container footer-content">
-    <div class="footer-left"><span class="footer-logo"><span class="logo-bracket">&lt;</span><span class="logo-text">ThanhBinhDev</span><span class="logo-bracket">/&gt;</span></span><p class="footer-copy">&copy; 2026 Crafted with passion</p></div>
-    <div class="footer-right"><a href="https://t.me/thanhbinhdev" target="_blank" rel="noopener" class="footer-social magnetic-btn" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21.2 4.4L2.4 11.4c-.6.2-.6.8 0 1l4.3 1.6 1.6 5.2c.1.4.6.5.9.3l2.3-1.9 4.5 3.3c.4.3 1 .1 1.1-.4L21.8 5.2c.1-.6-.3-1-.6-.8z"/><path d="M8.3 14L18 6.5"/></svg></a><a href="https://github.com/thanhbinhdev" target="_blank" rel="noopener" class="footer-social magnetic-btn" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></a></div>
-</div>
-<div class="footer-back-top"><a href="#hero" class="back-top-btn magnetic-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></a></div>
-</footer>
+<footer id="footer"><div class="container footer-content">
+    <div class="footer-logo"><a href="#hero" class="logo-link"><span class="logo-bracket">&lt;</span><span class="logo-text">ThanhBinhDev</span><span class="logo-bracket">/&gt;</span></a></div>
+    <div class="footer-copy">&copy; 2026 Crafted with passion</div>
+    <div class="footer-socials">
+        <a href="https://github.com/thanhbinhdev" target="_blank" rel="noopener noreferrer" class="footer-social-link"><img src="assets/icons/github.svg" alt="GitHub" width="18" height="18"></a>
+        <a href="https://t.me/thanhbinhdev" target="_blank" rel="noopener noreferrer" class="footer-social-link"><img src="assets/icons/telegram.svg" alt="Telegram" width="18" height="18"></a>
+        <a href="#hero" class="footer-social-link" title="Back to top"><img src="assets/icons/arrow-up.svg" alt="Back to top" width="18" height="18"></a>
+    </div>
+</div></footer>
 <script src="app.js"></script>
 </body>
 </html>
