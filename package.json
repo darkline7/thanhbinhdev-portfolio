@@ -1,0 +1,12 @@
+{
+    "name": "thanhbinhdev-portfolio",
+    "version": "1.0.0",
+    "description": "ThanhBinhDev — Creative Developer Portfolio with Three.js + GSAP",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node server.js"
+    },
+    "author": "ThanhBinhDev",
+    "license": "MIT"
+}
