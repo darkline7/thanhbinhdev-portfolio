@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -25,20 +25,7 @@
 
 <div id="crt-overlay" class="crt-overlay"></div>
 
-<div id="preloader" class="anime-preloader">
-    <div class="preloader-hud">
-        <div class="hud-line-top"><span>[ SYSTEM BOOT // 起動シーケンス ]</span><span>EVA-NEURAL-LINK v4.0</span></div>
-        <div class="preloader-kanji">清平</div>
-        <div class="preloader-title">THANHBINH<span class="pulse-text">.DEV</span></div>
-        <div class="preloader-subtitle">// SPECIAL-GRADE CREATIVE TECHNOLOGIST //</div>
-        <div class="preloader-gauge">
-            <div class="gauge-bar"><div class="gauge-fill" id="preloader-fill"></div></div>
-            <div class="gauge-telemetry">
-                <span id="preloader-status">SYNCING NEURAL CORES...</span>
-                <span id="preloader-pct">0%</span>
-            </div>
-        </div>
-    </div>
+<!-- Preloader removed for instantaneous zero-latency boot -->
 </div>
 
 <div class="anime-cursor" id="cursor"><div class="cursor-crosshair"></div></div>
@@ -92,41 +79,82 @@
 <section id="hero" class="anime-section hero-section">
     <div class="manga-speedlines"></div>
     <div class="hero-container">
-        <div class="hero-badge">
-            <span class="badge-kanji">特級開発者</span>
-            <span class="badge-divider">|</span>
-            <span class="badge-text">SPECIAL-GRADE FULL-STACK ARCHITECT // PILOT READY</span>
+        <div class="hero-grid">
+            <!-- Left Column: Pilot Telemetry & Identity -->
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-kanji">特級開発者</span>
+                    <span class="badge-divider">|</span>
+                    <span class="badge-text">SPECIAL-GRADE FULL-STACK // PILOT READY</span>
+                </div>
+
+                <div class="hero-title-group">
+                    <div class="hero-kanji-bg" aria-hidden="true">清平</div>
+                    <h1 class="hero-main-title">
+                        <span class="title-sub-callout"><span class="title-slash">//</span> PILOT: 清平</span>
+                        <span class="title-row"><span class="title-word">THANHBINH</span></span>
+                        <span class="title-row title-row-sub">
+                            <span class="title-slash">//</span>
+                            <span class="title-accent">CREATIVE TECHNOLOGIST</span>
+                        </span>
+                    </h1>
+                </div>
+
+                <p class="hero-description">
+                    Architecting high-octane <strong>3D WebGL universes</strong>, cybernetic UI systems, and battle-hardened backend engines. Where anime kinetic aesthetics collide with production-grade engineering.
+                </p>
+
+                <!-- Telemetry HUD -->
+                <div class="hero-stats-hud">
+                    <div class="hud-stat"><span class="stat-name">SYNC RATE</span><span class="stat-val text-neon-pink">99.8%</span></div>
+                    <div class="hud-stat"><span class="stat-name">COMBAT CLASS</span><span class="stat-val text-neon-cyan">RANK S+</span></div>
+                    <div class="hud-stat"><span class="stat-name">MANA / CODE</span><span class="stat-val text-neon-yellow">OVERDRIVE</span></div>
+                    <div class="hud-stat"><span class="stat-name">LOCATION</span><span class="stat-val">VIETNAM [VN]</span></div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-anime btn-anime-primary" data-sound="slash">
+                        <span class="btn-cut"></span>
+                        <span class="btn-label-jp">任務一覧を見る</span>
+                        <span class="btn-label-en">EXPLORE MISSIONS &rarr;</span>
+                    </a>
+                    <a href="#contact" class="btn-anime btn-anime-ghost" data-sound="click">
+                        <span class="btn-cut"></span>
+                        <span class="btn-label-jp">交信プロトコル</span>
+                        <span class="btn-label-en">INITIATE TRANSMIT</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Holographic Pilot Character Visual -->
+            <div class="hero-visual">
+                <div class="hologram-mech-card">
+                    <div class="mech-card-header">
+                        <span class="mech-tag">[ UNIT: EVA-01 // PILOT ]</span>
+                        <span class="mech-status"><span class="pulse-dot"></span> ACTIVE</span>
+                    </div>
+                    <div class="mech-portrait-box">
+                        <img src="assets/images/anime_avatar.jpg" alt="ThanhBinh Pilot Avatar" class="mech-portrait-img">
+                        <div class="mech-scan-laser"></div>
+                        <div class="frame-corner corner-tl"></div>
+                        <div class="frame-corner corner-tr"></div>
+                        <div class="frame-corner corner-bl"></div>
+                        <div class="frame-corner corner-br"></div>
+                    </div>
+                    <div class="mech-card-footer">
+                        <div class="mech-row">
+                            <span class="mech-k">CODENAME:</span>
+                            <span class="mech-v text-neon-cyan">THANHBINH // 清平</span>
+                        </div>
+                        <div class="mech-row">
+                            <span class="mech-k">AFFINITY:</span>
+                            <span class="mech-v text-neon-pink">LIGHTNING &amp; VOID [S-CLASS]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="hero-title-group">
-            <div class="hero-kanji-bg" aria-hidden="true">清平</div>
-            <h1 class="hero-main-title">
-                <span class="title-row"><span class="title-word" data-scramble="THANHBINH">THANHBINH</span></span>
-                <span class="title-row title-row-sub">
-                    <span class="title-slash">//</span>
-                    <span class="title-accent">CREATIVE TECHNOLOGIST</span>
-                </span>
-            </h1>
-        </div>
-        <p class="hero-description">
-            Architecting high-octane <strong>3D WebGL universes</strong>, cybernetic UI systems, and battle-hardened backend engines. Where anime kinetic aesthetics collide with production-grade engineering.
-        </p>
-        <div class="hero-stats-hud">
-            <div class="hud-stat"><span class="stat-name">SYNC RATE</span><span class="stat-val text-neon-pink">99.8%</span></div>
-            <div class="hud-stat"><span class="stat-name">COMBAT CLASS</span><span class="stat-val text-neon-cyan">RANK S+</span></div>
-            <div class="hud-stat"><span class="stat-name">MANA / CODE</span><span class="stat-val text-neon-yellow">OVERDRIVE</span></div>
-            <div class="hud-stat"><span class="stat-name">LOCATION</span><span class="stat-val">VIETNAM [VN]</span></div>
-        </div>
-        <div class="hero-actions">
-            <a href="#projects" class="btn-anime btn-anime-primary" data-sound="slash">
-                <span class="btn-cut"></span>
-                <span class="btn-label-jp">任務一覧を見る</span>
-                <span class="btn-label-en">EXPLORE MISSIONS &rarr;</span>
-            </a>
-            <a href="#contact" class="btn-anime btn-anime-ghost" data-sound="click">
-                <span class="btn-label-jp">交信プロトコル</span>
-                <span class="btn-label-en">INITIATE TRANSMIT</span>
-            </a>
-        </div>
+
         <div class="hero-scroll-tag">
             <span class="scroll-kanji">下へスクロール</span>
             <div class="scroll-caret"></div>

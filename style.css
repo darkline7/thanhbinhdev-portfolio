@@ -37,7 +37,7 @@ body.anime-body {
     color: var(--text-primary);
     font-family: var(--font-display);
     overflow-x: hidden;
-    cursor: none;
+    cursor: default;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -430,9 +430,14 @@ body.crt-active .crt-overlay { opacity: 0.85; }
     min-width: 40px;
 }
 
+
 /* Hero Section */
 .hero-section {
-    padding-top: calc(76px + 4rem);
+    padding-top: calc(76px + 2rem);
+    padding-bottom: 3rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     overflow: hidden;
 }
 .hero-container {
@@ -443,96 +448,200 @@ body.crt-active .crt-overlay { opacity: 0.85; }
     position: relative;
     z-index: 2;
 }
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3rem;
+    align-items: center;
+}
 .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.45rem 1.1rem;
-    background: rgba(255, 42, 133, 0.08);
+    padding: 0.4rem 1rem;
+    background: rgba(255, 42, 133, 0.1);
     border: 1px solid var(--neon-pink);
     border-radius: 4px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 .badge-kanji { color: var(--neon-pink); font-family: var(--font-jp); font-weight: 700; }
 .badge-divider { color: var(--border-manga); }
-.badge-text { color: #fff; letter-spacing: 0.1em; }
+.badge-text { color: #fff; letter-spacing: 0.08em; }
 
 .hero-title-group {
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 .hero-kanji-bg {
     position: absolute;
-    top: -50px;
+    top: -40px;
     left: -20px;
     font-family: var(--font-jp);
-    font-size: clamp(6rem, 18vw, 16rem);
+    font-size: clamp(5rem, 14vw, 12rem);
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.025);
+    color: rgba(255, 255, 255, 0.03);
     user-select: none;
     pointer-events: none;
     line-height: 1;
     z-index: -1;
 }
 .hero-main-title {
-    font-size: clamp(3rem, 8.5vw, 6.8rem);
-    font-weight: 800;
-    line-height: 1.05;
+    font-size: clamp(2.4rem, 5.5vw, 4.8rem);
+    font-weight: 900;
+    line-height: 1.1;
     letter-spacing: -0.02em;
 }
 .title-row { display: block; }
-.title-word {
-    background: linear-gradient(135deg, #ffffff 40%, var(--neon-cyan) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.title-sub-callout {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    color: var(--neon-pink);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.35rem;
+    font-weight: 700;
 }
 .title-row-sub {
-    font-size: clamp(1.4rem, 4vw, 3.2rem);
+    font-size: clamp(1.1rem, 2.6vw, 2.2rem);
     font-weight: 700;
     letter-spacing: 0.02em;
     color: #fff;
-    margin-top: 0.5rem;
+    margin-top: 0.35rem;
 }
 .title-slash { color: var(--neon-pink); margin-right: 0.4rem; font-family: var(--font-mono); }
-.title-accent {
-    background: linear-gradient(90deg, var(--neon-pink), #e040fb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
 
 .hero-description {
-    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-    line-height: 1.8;
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+    line-height: 1.7;
     color: var(--text-secondary);
-    max-width: 650px;
-    margin-bottom: 2.5rem;
+    max-width: 580px;
+    margin-bottom: 1.6rem;
 }
 .hero-description strong { color: var(--neon-cyan); }
 
 .hero-stats-hud {
     display: flex;
-    gap: 2rem;
-    padding: 1.2rem 1.6rem;
-    background: rgba(14, 16, 34, 0.8);
+    gap: 1.5rem;
+    padding: 0.9rem 1.4rem;
+    background: rgba(14, 16, 34, 0.85);
     border: 1px solid var(--border-manga);
     border-left: 3px solid var(--neon-pink);
-    max-width: 620px;
-    margin-bottom: 3rem;
+    max-width: 560px;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
     clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    backdrop-filter: blur(8px);
 }
-.hud-stat { display: flex; flex-direction: column; gap: 0.2rem; }
-.stat-name { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.1em; }
-.stat-val { font-family: var(--font-mono); font-size: 1rem; font-weight: 700; color: #fff; }
+.hud-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.stat-name { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.1em; }
+.stat-val { font-family: var(--font-mono); font-size: 0.95rem; font-weight: 700; color: #fff; }
 .text-neon-pink { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink-glow); }
 .text-neon-cyan { color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan-glow); }
 .text-neon-yellow { color: var(--neon-yellow); }
 
-.hero-actions { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 4rem; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+
+/* Hologram Mech Card (Hero Right) */
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hologram-mech-card {
+    width: 100%;
+    max-width: 380px;
+    background: rgba(14, 16, 34, 0.85);
+    border: 1px solid var(--border-manga);
+    border-top: 2px solid var(--neon-cyan);
+    padding: 1rem;
+    position: relative;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 245, 212, 0.15);
+    backdrop-filter: blur(10px);
+}
+.mech-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 0.75rem;
+}
+.mech-tag { color: var(--neon-cyan); letter-spacing: 0.08em; font-weight: 700; }
+.mech-status { color: #4ade80; display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; }
+.pulse-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; box-shadow: 0 0 8px #4ade80; animation: blink 1.2s infinite; }
+
+.mech-portrait-box {
+    position: relative;
+    aspect-ratio: 4/4.5;
+    overflow: hidden;
+    background: #080914;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.mech-portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: contrast(1.05) brightness(1.02);
+    transition: transform 0.5s ease;
+}
+.hologram-mech-card:hover .mech-portrait-img {
+    transform: scale(1.04);
+}
+.mech-scan-laser {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--neon-pink), var(--neon-cyan), transparent);
+    box-shadow: 0 0 12px var(--neon-cyan);
+    animation: mechScan 3.5s linear infinite;
+    pointer-events: none;
+    opacity: 0.8;
+}
+@keyframes mechScan {
+    0% { top: 0%; opacity: 0; }
+    10% { opacity: 0.9; }
+    90% { opacity: 0.9; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.mech-card-footer {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+.mech-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+}
+.mech-k { color: var(--text-muted); }
+.mech-v { font-weight: 700; }
+
+@media (max-width: 960px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .hero-visual {
+        order: 2;
+    }
+    .hologram-mech-card {
+        max-width: 300px;
+    }
+}
+
 
 /* Anime Buttons */
 .btn-anime {
@@ -1179,3 +1288,13 @@ body.crt-active .crt-overlay { opacity: 0.85; }
     box-shadow: 0 0 15px var(--neon-pink-glow);
 }
 .btn-booster:hover { transform: translateY(-4px); background: #ff4d94; }
+
+@media (max-width: 600px) {
+    .brand-kanji, .brand-slash { display: none; }
+    .control-btn .control-text, #sfx-label, #crt-label { display: none; }
+    .control-btn { padding: 0.45rem 0.6rem; font-size: 0.95rem; }
+    .hero-badge { font-size: 0.68rem; padding: 0.35rem 0.75rem; }
+    .hero-main-title { font-size: 2.2rem; }
+    .hero-stats-hud { gap: 1rem; padding: 0.75rem 1rem; }
+    .hero-actions .btn-anime { width: 100%; text-align: center; }
+}

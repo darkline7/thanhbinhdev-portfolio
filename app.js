@@ -193,12 +193,12 @@
         createSakuraPetals: function () {
             var petalGeo = new THREE.BufferGeometry();
             var pts = [
-                0, 0.35, 0,
-                0.2, 0.2, 0.05,
-                0.25, -0.1, 0.08,
-                0, -0.35, 0.02,
-                -0.25, -0.1, 0.08,
-                -0.2, 0.2, 0.05
+                0, 0.22, 0,
+                0.12, 0.12, 0.03,
+                0.15, -0.06, 0.04,
+                0, -0.22, 0.01,
+                -0.15, -0.06, 0.04,
+                -0.12, 0.12, 0.03
             ];
             var indices = [
                 0, 1, 3,
@@ -210,8 +210,8 @@
             petalGeo.setIndex(indices);
             petalGeo.computeVertexNormals();
 
-            var colors = [0xff4d94, 0xff77a9, 0xffa8c8, 0xffffff, 0xff2a85];
-            var petalCount = 140;
+            var colors = [0xff77a9, 0xffa8c8, 0xff4d94, 0xffffff, 0xff2a85];
+            var petalCount = 80;
 
             for (var i = 0; i < petalCount; i++) {
                 var c = colors[Math.floor(Math.random() * colors.length)];
@@ -219,14 +219,14 @@
                     color: c,
                     side: THREE.DoubleSide,
                     transparent: true,
-                    opacity: 0.85
+                    opacity: 0.55
                 });
                 var mesh = new THREE.Mesh(petalGeo, mat);
-                mesh.position.x = (Math.random() - 0.5) * 32;
-                mesh.position.y = (Math.random() - 0.5) * 24;
-                mesh.position.z = (Math.random() - 0.5) * 20;
+                mesh.position.x = (Math.random() - 0.5) * 36;
+                mesh.position.y = (Math.random() - 0.5) * 26;
+                mesh.position.z = -14 + Math.random() * 12;
 
-                var scale = 0.5 + Math.random() * 0.7;
+                var scale = 0.2 + Math.random() * 0.22;
                 mesh.scale.set(scale, scale, scale);
 
                 mesh.userData = {
@@ -358,55 +358,20 @@
     var animeLoader = {
         init: function () {
             var preloader = document.getElementById('preloader');
-            var fill = document.getElementById('preloader-fill');
-            var pctText = document.getElementById('preloader-pct');
-            var statusText = document.getElementById('preloader-status');
-            if (!preloader || !fill) return;
-
-            var progress = 0;
-            var statuses = [
-                'SYNCING NEURAL CORES...',
-                'CALIBRATING 3D SHADERS...',
-                'UNLEASHING MANGA ENGINE...',
-                'SYSTEM OVERDRIVE READY!'
-            ];
-
-            var interval = setInterval(function () {
-                progress += Math.random() * 18 + 5;
-                if (progress > 100) progress = 100;
-                fill.style.width = progress + '%';
-                pctText.textContent = Math.floor(progress) + '%';
-
-                var step = Math.min(Math.floor((progress / 100) * statuses.length), statuses.length - 1);
-                statusText.textContent = statuses[step];
-
-                if (progress >= 100) {
-                    clearInterval(interval);
-                    setTimeout(function () {
-                        gsap.to(preloader, {
-                            opacity: 0,
-                            scale: 1.05,
-                            duration: 0.7,
-                            ease: 'power3.inOut',
-                            onComplete: function () {
-                                preloader.style.display = 'none';
-                                heroSequence();
-                            }
-                        });
-                    }, 300);
-                }
-            }, 60);
+            if (preloader) preloader.style.display = 'none';
+            heroSequence();
         }
     };
 
-    function heroSequence() {
+        function heroSequence() {
+        if (typeof gsap === 'undefined') return;
         var tl = gsap.timeline();
-        tl.from('.hero-badge', { opacity: 0, y: -20, duration: 0.6, ease: 'back.out(1.7)' })
-          .from('.title-word', { opacity: 0, y: 40, duration: 0.8, ease: 'power4.out' }, '-=0.3')
-          .from('.title-row-sub', { opacity: 0, x: -30, duration: 0.7, ease: 'power3.out' }, '-=0.5')
-          .from('.hero-description', { opacity: 0, y: 20, duration: 0.6, ease: 'power2.out' }, '-=0.4')
-          .from('.hero-stats-hud', { opacity: 0, scale: 0.95, duration: 0.6, ease: 'back.out(1.5)' }, '-=0.3')
-          .from('.hero-actions .btn-anime', { opacity: 0, y: 25, stagger: 0.12, duration: 0.6, ease: 'power3.out' }, '-=0.4');
+        tl.fromTo('.hero-badge', { opacity: 0, y: -15 }, { opacity: 1, y: 0, duration: 0.4, clearProps: 'opacity,transform', ease: 'power2.out' })
+          .fromTo('.hero-main-title', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, clearProps: 'opacity,transform', ease: 'power3.out' }, '-=0.2')
+          .fromTo('.hero-description', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4, clearProps: 'opacity,transform', ease: 'power2.out' }, '-=0.2')
+          .fromTo('.hero-stats-hud', { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.4, clearProps: 'opacity,transform', ease: 'power2.out' }, '-=0.2')
+          .fromTo('.hero-actions .btn-anime', { opacity: 0, y: 15 }, { opacity: 1, y: 0, stagger: 0.08, duration: 0.4, clearProps: 'opacity,transform', ease: 'power2.out' }, '-=0.2')
+          .fromTo('.hero-visual', { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.5, clearProps: 'opacity,transform', ease: 'power2.out' }, '-=0.3');
     }
 
     // ==========================================
@@ -421,7 +386,8 @@
             opacity: 0,
             x: -40,
             duration: 0.8,
-            ease: 'power3.out'
+            ease: 'power3.out',
+            clearProps: 'opacity,transform'
         });
 
         // Speech bubble & arsenal
@@ -430,7 +396,8 @@
             opacity: 0,
             x: 40,
             duration: 0.8,
-            ease: 'power3.out'
+            ease: 'power3.out',
+            clearProps: 'opacity,transform'
         });
 
         // Jutsu Cards stagger
@@ -440,7 +407,8 @@
             y: 50,
             stagger: 0.12,
             duration: 0.7,
-            ease: 'back.out(1.4)'
+            ease: 'back.out(1.4)',
+            clearProps: 'opacity,transform'
         });
 
         // Quest Cards stagger
@@ -450,7 +418,8 @@
             y: 60,
             stagger: 0.15,
             duration: 0.8,
-            ease: 'power3.out'
+            ease: 'power3.out',
+            clearProps: 'opacity,transform'
         });
 
         // Terminal Form
@@ -459,14 +428,16 @@
             opacity: 0,
             x: -30,
             duration: 0.8,
-            ease: 'power3.out'
+            ease: 'power3.out',
+            clearProps: 'opacity,transform'
         });
         gsap.from('.terminal-form-card', {
             scrollTrigger: { trigger: '#contact', start: 'top 75%' },
             opacity: 0,
             x: 30,
             duration: 0.8,
-            ease: 'power3.out'
+            ease: 'power3.out',
+            clearProps: 'opacity,transform'
         });
 
         // Anchor links smooth scroll
